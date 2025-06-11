@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "89575cb5-f820-4ce6-8949-7d75675433a6",
+		"name": "Cafe Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27077257"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"contactNumber\": \"123-456-7890\",\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"securePassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/signUp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"johndoe@example.com\",\r\n    \"password\": \"securePassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJzdWIiOiJqb2huZG9lQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ5NjE1NTA3LCJleHAiOjE3NDk2NTE1MDd9.V6BKAACzDXqbO2drrjY4kP9NzfB6hQvBvkm74pIl6BE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/user/data?email=johndoe@example.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"data"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "johndoe@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
