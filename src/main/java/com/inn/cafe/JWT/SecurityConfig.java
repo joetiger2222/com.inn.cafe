@@ -33,6 +33,7 @@ public class SecurityConfig {
                 .requestMatchers("/user/login","/user/signUp","/user/forgotPassword").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/user/**").hasAnyRole("USER","ADMIN")
+                .requestMatchers("/category/**").hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
